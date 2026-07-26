@@ -16,7 +16,7 @@ export default function Header({ currentTab, setCurrentTab, onOpenConsultation }
     { id: 'case-studies', label: 'Case Studies' },
     { id: 'carrier-setup', label: 'Carrier Setup Portal' },
     { id: 'earnings-calc', label: 'Earnings Estimator' },
-    { id: 'dispatcher-hub', label: 'Dispatcher Hub', badge: 'Admin' }
+    
   ];
 
   const handleNavClick = (tabId: string) => {
@@ -86,11 +86,6 @@ export default function Header({ currentTab, setCurrentTab, onOpenConsultation }
               >
                 <div className="flex items-center gap-1.5">
                   {item.label}
-                  {item.badge && (
-                    <span className="text-[9px] bg-orange-500/10 text-orange-600 border border-orange-500/20 rounded px-1 font-bold py-0.2">
-                      {item.badge}
-                    </span>
-                  )}
                 </div>
                 {currentTab === item.id && (
                   <span className="absolute bottom-[-1px] left-1/4 right-1/4 h-[2px] bg-orange-500 rounded-full" />
@@ -139,11 +134,6 @@ export default function Header({ currentTab, setCurrentTab, onOpenConsultation }
                 }`}
               >
                 <span>{item.label}</span>
-                {item.badge && (
-                  <span className="text-[9px] bg-orange-500/20 text-orange-600 border border-orange-500/30 rounded px-2 py-0.5 font-bold">
-                    {item.badge}
-                  </span>
-                )}
               </button>
             ))}
             <div className="pt-4 px-4">
